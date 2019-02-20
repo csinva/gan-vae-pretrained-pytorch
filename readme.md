@@ -1,5 +1,8 @@
-**Pre-trained GANs for MNIST / CIFAR10 along with model class definitions and notebooks showing how to use them.**
+**Pre-trained GANs for MNIST / CIFAR10**
 
+- includes model class definitions
+- includes training scripts
+- includes notebooks showing how to load pretrained nets / use them
 - tested with pytorch 1.0, python 3.5
 
 ### mnist
