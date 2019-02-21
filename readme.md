@@ -5,10 +5,11 @@
 - tested with pytorch 1.0, python 3
 - generates images the same size as the dataset images
 - based on the official [pytorch examples repo](https://github.com/pytorch/examples/tree/master/dcgan) with modifications to generate the appropriate size
+- feel free to use [the code in this repo](https://github.com/csinva/pytorch_gan_pretrained) openly
 
 ### mnist
 
-Generates images the size of the MNIST dataset (28x28), using an architecture based on the [DCGAN paper](http://arxiv.org/abs/1511.06434). Trained for 100 epochs. Weights [here](./mnist_dcgan/weights).
+Generates images the size of the MNIST dataset (28x28), using an architecture based on the [DCGAN paper](http://arxiv.org/abs/1511.06434). Trained for 100 epochs. Weights [here](https://github.com/csinva/pytorch_gan_pretrained/tree/master/mnist_dcgan/weights).
 
 | generated samples                                            | data samples                                         |
 | ------------------------------------------------------------ | ---------------------------------------------------- |
@@ -18,7 +19,7 @@ For comparison with a less complicated architecture, I've also included a pre-tr
 
 ### cifar10
 
-The cifar10 gan is from the [pytorch examples repo](https://github.com/pytorch/examples/tree/master/dcgan) and implements the [DCGAN paper](http://arxiv.org/abs/1511.06434). It required only minor alterations to generate images the size of the cifar10 dataset (32x32x3). Trained for 200 epochs. Weights [here](cifar10/weights).
+The cifar10 gan is from the [pytorch examples repo](https://github.com/pytorch/examples/tree/master/dcgan) and implements the [DCGAN paper](http://arxiv.org/abs/1511.06434). It required only minor alterations to generate images the size of the cifar10 dataset (32x32x3). Trained for 200 epochs. Weights [here](https://github.com/csinva/pytorch_gan_pretrained/tree/master/cifar10_dcgan/weights).
 
 | generated samples                                            | data samples                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------ |
