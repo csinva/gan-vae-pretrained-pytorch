@@ -8,7 +8,7 @@
 
 ### mnist
 
-Generates images the size of the MNIST dataset (28x28), using an architecture based on the [DCGAN paper](http://arxiv.org/abs/1511.06434). Trained for 100 epochs. Weights [here](mnist_dcgan/weights).
+Generates images the size of the MNIST dataset (28x28), using an architecture based on the [DCGAN paper](http://arxiv.org/abs/1511.06434). Trained for 100 epochs. Weights [here](./mnist_dcgan/weights).
 
 | generated samples                                            | data samples                                         |
 | ------------------------------------------------------------ | ---------------------------------------------------- |
