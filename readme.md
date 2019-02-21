@@ -5,7 +5,6 @@
 - tested with pytorch 1.0, python 3
 - generates images the same size as the dataset images
 - based on the official [pytorch examples repo](https://github.com/pytorch/examples/tree/master/dcgan) with modifications to generate the appropriate size
-- feel free to use [the code in this repo](https://github.com/csinva/pytorch_gan_pretrained) openly
 
 ### mnist
 
@@ -24,3 +23,9 @@ The cifar10 gan is from the [pytorch examples repo](https://github.com/pytorch/e
 | generated samples                                            | data samples                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------ |
 | ![fake_images-300](cifar10_dcgan/samples/fake_samples_epoch_199.png) | ![real_images](cifar10_dcgan/samples/real_samples.png) |
+
+
+### reference
+
+- feel free to use/share this code openly
+- for similar projects, see some of my other repos: (e.g. [acd](https://github.com/csinva/acd)) or my website ([csinva.github.io](https://csinva.github.io/))
