@@ -4,10 +4,11 @@
 - includes training scripts
 - includes notebooks showing how to load pretrained nets / use them
 - tested with pytorch 1.0, python 3.5
+- generates images the same size as the dataset images
 
 ### mnist
 
-mnist code from [this repo](https://github.com/BeierZhu/GAN-MNIST-Pytorch/blob/master/main.py). Trained for 300 epochs. Weights [here](mnist/weights).
+mnist code from [this repo](https://github.com/BeierZhu/GAN-MNIST-Pytorch/blob/master/main.py). Trained for 300 epochs. Weights [here](mnist/weights). Generates images the size of the MNIST dataset (28x28).
 
 
 
@@ -19,7 +20,7 @@ mnist code from [this repo](https://github.com/BeierZhu/GAN-MNIST-Pytorch/blob/m
 
 ### cifar10
 
-The cifar10 gan is from the [pytorch examples repo](https://github.com/pytorch/examples/tree/master/dcgan) and implements the [DCGAN paper](http://arxiv.org/abs/1511.06434). It required only minor alterations to generate images the size of the cifar10 dataset (32x32) and was trained for 200 epochs. Weights [here](cifar10/weights).
+The cifar10 gan is from the [pytorch examples repo](https://github.com/pytorch/examples/tree/master/dcgan) and implements the [DCGAN paper](http://arxiv.org/abs/1511.06434). It required only minor alterations to generate images the size of the cifar10 dataset (32x32x3) and was trained for 200 epochs. Weights [here](cifar10/weights).
 
 | generated samples                                            | data samples                                     |
 | ------------------------------------------------------------ | ------------------------------------------------ |
