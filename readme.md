@@ -26,7 +26,7 @@ The cifar10 gan is from the [pytorch examples repo](https://github.com/pytorch/e
 
 ### cifar100
 
-Similiar to the above gans, the cifar100 gan here generates 32x32x1 images for generating grayscale images. Trained for 200 epochs. Weights [here](https://github.com/csinva/pytorch_gan_pretrained/tree/master/cifar100_dcgan_grayscale/weights). There are also weights/code for generating images which are 68x90x1.
+Similiar to the above gans, the cifar100 gan here generates 32x32x1 images for generating grayscale images. Trained for 200 epochs. Weights [here](https://github.com/csinva/pytorch_gan_pretrained/tree/master/cifar100_dcgan_grayscale/weights). There are also weights/code for generating images which are 34x45x1.
 
 | generated samples                                            | data samples                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------ |
