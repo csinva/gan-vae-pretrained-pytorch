@@ -84,7 +84,7 @@ class Discriminator(nn.Module):
         return output.view(-1, 1).squeeze(1)
     
 class Generator_rect(nn.Module):
-    def __init__(self, ngpu):
+    def __init__(self, ngpu, nc=1, nz=100, ngf=64):
         super(Generator_rect, self).__init__()
         self.ngpu = ngpu
         self.main = nn.Sequential(
@@ -119,7 +119,7 @@ class Generator_rect(nn.Module):
         return output
     
 class Discriminator_rect(nn.Module):
-    def __init__(self, ngpu):
+    def __init__(self, ngpu, nc=1, ndf=64):
         super(Discriminator_rect, self).__init__()
         self.ngpu = ngpu
         self.main = nn.Sequential(
