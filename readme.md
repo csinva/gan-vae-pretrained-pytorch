@@ -1,4 +1,4 @@
-**Pre-trained GANs for MNIST / CIFAR10**
+**Pre-trained GANs + classifiers for MNIST / CIFAR10**
 
 - includes model class definitions + training scripts
 - includes notebooks showing how to load pretrained nets / use them
@@ -15,6 +15,8 @@ Generates images the size of the MNIST dataset (28x28), using an architecture ba
 | ![fake_images-300](mnist_dcgan/samples/fake_samples_epoch_099.png) | ![real_images](mnist_dcgan/samples/real_samples.png) |
 
 For comparison with a less complicated architecture, I've also included a pre-trained non-convolutional GAN  in the [mnist_mlp](mnist_mlp) folder, based on code from [this repo](https://github.com/BeierZhu/GAN-MNIST-Pytorch/blob/master/main.py) (trained for 300 epochs).
+
+I've also included a pre-trained LeNet classifier which achieves 99% test accuracy in the [classifier/lenet](classifers/lenet) folder, based on [this repo](https://github.com/activatedgeek/LeNet-5).
 
 ### cifar10
 
