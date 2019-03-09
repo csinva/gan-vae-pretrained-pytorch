@@ -26,7 +26,7 @@ The cifar10 gan is from the [pytorch examples repo](https://github.com/pytorch/e
 | ------------------------------------------------------------ | ------------------------------------------------------ |
 | ![fake_images-300](cifar10_dcgan/samples/fake_samples_epoch_199.png) | ![real_images](cifar10_dcgan/samples/real_samples.png) |
 
-I've also linked to a pre-trained cifar classifier in the [classifiers/cifar](classiferss/cifar) folder from ![this repo](https://github.com/aaron-xichen/pytorch-playground/tree/master/cifar).
+I've also linked to a pre-trained cifar classifier in the [classifiers/cifar](classifers/cifar) folder from [this repo](https://github.com/aaron-xichen/pytorch-playground/tree/master/cifar).
 
 
 
