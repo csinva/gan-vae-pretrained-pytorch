@@ -16,7 +16,7 @@ Generates images the size of the MNIST dataset (28x28), using an architecture ba
 
 For comparison with a less complicated architecture, I've also included a pre-trained non-convolutional GAN  in the [mnist_mlp](mnist_mlp) folder, based on code from [this repo](https://github.com/BeierZhu/GAN-MNIST-Pytorch/blob/master/main.py) (trained for 300 epochs).
 
-I've also included a pre-trained LeNet classifier which achieves 99% test accuracy in the [classifiers/mnist](classifers/mnist) folder, based on [this repo](https://github.com/activatedgeek/LeNet-5).
+I've also included a pre-trained LeNet classifier which achieves 99% test accuracy in the [classifiers/mnist](https://github.com/csinva/pytorch_gan_pretrained/tree/master/classifiers/mnist) folder, based on [this repo](https://github.com/activatedgeek/LeNet-5).
 
 ### cifar10
 
@@ -26,7 +26,7 @@ The cifar10 gan is from the [pytorch examples repo](https://github.com/pytorch/e
 | ------------------------------------------------------------ | ------------------------------------------------------ |
 | ![fake_images-300](cifar10_dcgan/samples/fake_samples_epoch_199.png) | ![real_images](cifar10_dcgan/samples/real_samples.png) |
 
-I've also linked to a pre-trained cifar classifier in the [classifiers/cifar](classifers/cifar) folder from [this repo](https://github.com/aaron-xichen/pytorch-playground/tree/master/cifar).
+I've also linked to a pre-trained cifar classifier in the [classifiers/cifar](https://github.com/csinva/pytorch_gan_pretrained/tree/master/classifiers/cifar) folder from [this repo](https://github.com/aaron-xichen/pytorch-playground/tree/master/cifar).
 
 
 
