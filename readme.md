@@ -47,9 +47,9 @@ Similiar to the above gans, the cifar100 gan here generates 32x32x1 images for g
 ```
 @misc{singh2019gan,
   author       = {Chandan Singh},
-  title        = {{Pretrained GANs in pytorch for MNIST/CIFAR.}},
-  month        = May,
-  year         = 2019,
+  title        = {Pretrained GANs in pytorch for MNIST/CIFAR.},
+  month        = {May},
+  year         = {2019},
   doi          = {10.5281/zenodo.2778737},
   version      = {1.0.0},
   publisher    = {Zenodo},
