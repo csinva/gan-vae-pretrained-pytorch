@@ -41,4 +41,20 @@ Similiar to the above gans, the cifar100 gan here generates 32x32x1 images for g
 ### reference
 
 - feel free to use/share this code openly
+
+- here's a citation if you want to reference it: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2778737.svg)](https://doi.org/10.5281/zenodo.2778737)
+
+```
+@misc{singh2019gan,
+  author       = {Chandan Singh},
+  title        = {{Pretrained GANs in pytorch for MNIST/CIFAR.}},
+  month        = May,
+  year         = 2019,
+  doi          = {10.5281/zenodo.2778737},
+  version      = {1.0.0},
+  publisher    = {Zenodo},
+  url          = {https://doi.org/10.5281/zenodo.2778737}
+}
+```
+
 - for similar projects, see some of my other repos: (e.g. [acd](https://github.com/csinva/acd)) or my website ([csinva.github.io](https://csinva.github.io/))
