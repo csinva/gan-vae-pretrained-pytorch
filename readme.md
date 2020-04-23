@@ -14,7 +14,7 @@ Generates images the size of the MNIST dataset (28x28), using an architecture ba
 | ------------------------------------------------------------ | ---------------------------------------------------- |
 | ![fake_images-300](mnist_dcgan/samples/fake_samples_epoch_099.png) | ![real_images](mnist_dcgan/samples/real_samples.png) |
 
-For comparison with a less complicated architecture, I've also included a pre-trained non-convolutional GAN  in the [mnist_mlp](mnist_mlp) folder, based on code from [this repo](https://github.com/BeierZhu/GAN-MNIST-Pytorch/blob/master/main.py) (trained for 300 epochs).
+For comparison with a less complicated architecture, I've also included a pre-trained non-convolutional GAN  in the [mnist_gan_mlp](mnist_mlp) folder, based on code from [this repo](https://github.com/BeierZhu/GAN-MNIST-Pytorch/blob/master/main.py) (trained for 300 epochs).
 
 I've also included a pre-trained LeNet classifier which achieves 99% test accuracy in the [classifiers/mnist](https://github.com/csinva/pytorch_gan_pretrained/tree/master/classifiers/mnist) folder, based on [this repo](https://github.com/activatedgeek/LeNet-5).
 
