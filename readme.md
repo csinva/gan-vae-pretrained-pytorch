@@ -1,4 +1,4 @@
-**Pre-trained GANs + classifiers for MNIST / CIFAR10**
+**Pre-trained GANs, VAEs + classifiers for MNIST / CIFAR10**
 
 - includes model class definitions + training scripts
 - includes notebooks showing how to load pretrained nets / use them
