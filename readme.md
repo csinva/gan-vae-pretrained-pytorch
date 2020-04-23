@@ -10,9 +10,9 @@
 
 Generates images the size of the MNIST dataset (28x28), using an architecture based on the [DCGAN paper](http://arxiv.org/abs/1511.06434). Trained for 100 epochs. Weights [here](https://github.com/csinva/pytorch_gan_pretrained/tree/master/mnist_dcgan/weights).
 
-| generated samples                                            | data samples                                         |
-| ------------------------------------------------------------ | ---------------------------------------------------- |
-| ![fake_images-300](mnist_dcgan/samples/fake_samples_epoch_099.png) | ![real_images](mnist_dcgan/samples/real_samples.png) |
+| dcgan samples                                                | vae samples                                         | data samples                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------------------------------- |
+| ![fake_images-300](mnist_dcgan/samples/fake_samples_epoch_099.png) | ![fake_images-300](mnist_vae/samples/sample_25.png) | ![real_images](mnist_dcgan/samples/real_samples.png) |
 
 For comparison with a less complicated architecture, I've also included a pre-trained non-convolutional GAN  in the [mnist_gan_mlp](mnist_mlp) folder, based on code from [this repo](https://github.com/BeierZhu/GAN-MNIST-Pytorch/blob/master/main.py) (trained for 300 epochs).
 
