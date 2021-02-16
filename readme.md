@@ -1,8 +1,16 @@
-**Pre-trained GANs, VAEs + classifiers for MNIST / CIFAR10**. A simple starting point for modeling with GANs/VAEs in pytorch.
+<h1 align="center"> Pre-trained GANs, VAEs + classifiers for MNIST / CIFAR10 </h1>
+<p align="center"> A simple starting point for modeling with GANs/VAEs in pytorch.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/license-mit-blue.svg">
+  <img src="https://img.shields.io/badge/python-3.6--3.9-blue">
+  <img src="https://img.shields.io/github/checks-status/csinva/gan-vae-pretrained-pytorch/master">
+</p>  
 
 - includes model class definitions + training scripts
 - includes notebooks showing how to load pretrained nets / use them
-- tested with pytorch 1.0+, python 3.6+
+- tested with pytorch 1.0+
 - generates images the same size as the dataset images
 
 ### mnist
