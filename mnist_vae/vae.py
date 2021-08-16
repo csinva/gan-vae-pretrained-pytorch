@@ -2,12 +2,15 @@ from __future__ import print_function
 import argparse
 import torch
 import torch.utils.data
+import os
+import wandb
+from os.path import join as oj
 from torch import nn, optim
 from torch.nn import functional as F
 from torchvision import datasets, transforms
 from torchvision.utils import save_image
-import os
-from os.path import join as oj
+
+
 
 parser = argparse.ArgumentParser(description='VAE MNIST Example')
 parser.add_argument('--batch-size', type=int, default=128, metavar='N',
@@ -80,6 +83,7 @@ def train(epoch):
                 epoch, batch_idx * len(data), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader),
                 loss.item() / len(data)))
+            wandb.log({"Training Loss": loss.item() / len(data)})
 
     print('====> Epoch: {} Average loss: {:.4f}'.format(
           epoch, train_loss / len(train_loader.dataset)))
@@ -105,10 +109,13 @@ def test(epoch):
 
     test_loss /= len(test_loader.dataset)
     print('====> Test set loss: {:.4f}'.format(test_loss))
+    wandb.log({"Test Loss": test_loss})
 
 if __name__ == "__main__":
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
+
+    wandb.init(project='mnist-generation', entity='bk-synth', config=args)
 
     torch.manual_seed(args.seed)
 
@@ -126,6 +133,7 @@ if __name__ == "__main__":
     os.makedirs(out_dir, exist_ok=True)
     model = VAE().to(device)
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
+    wandb.watch(model)
 
     
     # actually do training
