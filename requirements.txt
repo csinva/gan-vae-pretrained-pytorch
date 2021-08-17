@@ -4,3 +4,4 @@ tqdm
 six
 lmdb
 matplotlib
+wandb

@@ -4,6 +4,7 @@ from __future__ import print_function
 import argparse
 import os
 import random
+import wandb
 import torch
 import torch.nn as nn
 import torch.nn.parallel
@@ -88,7 +89,7 @@ if __name__ == '__main__':
     parser.add_argument('--nz', type=int, default=100, help='size of the latent z vector')
     parser.add_argument('--ngf', type=int, default=64)
     parser.add_argument('--ndf', type=int, default=64)
-    parser.add_argument('--niter', type=int, default=25, help='number of epochs to train for')
+    parser.add_argument('--niter', type=int, default=5, help='number of epochs to train for')
     parser.add_argument('--lr', type=float, default=0.0002, help='learning rate, default=0.0002')
     parser.add_argument('--beta1', type=float, default=0.5, help='beta1 for adam. default=0.5')
     parser.add_argument('--cuda', action='store_true', help='enables cuda')
@@ -100,6 +101,8 @@ if __name__ == '__main__':
 
     opt = parser.parse_args()
     print(opt)
+
+    run = wandb.init(project='mnist-generation', entity='bk-synth', config=opt, name='First GAN run', tags=["GAN", "MNIST"])
 
     try:
         os.makedirs(opt.outf)
@@ -169,6 +172,9 @@ if __name__ == '__main__':
     optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999))
     optimizerG = optim.Adam(netG.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999))
 
+    wandb.watch(netD, log='gradients', log_graph=True)
+    wandb.watch(netG, log='gradients', log_graph=True)
+
     for epoch in range(opt.niter):
         for i, data in enumerate(dataloader, 0):
             ############################
@@ -215,9 +221,14 @@ if __name__ == '__main__':
                         '%s/real_samples.png' % opt.outf,
                         normalize=True)
                 fake = netG(fixed_noise)
+                global_step = (len(dataloader) * epoch) + i
                 vutils.save_image(fake.detach(),
-                        '%s/fake_samples_epoch_%03d.png' % (opt.outf, epoch),
+                        '%s/fake_samples_step_%06d.png' % (opt.outf, global_step),
                         normalize=True)
+                wandb.log({"Discriminator Loss": errD.item(), 
+                           "Generator Loss": errG.item(),
+                           "Fake Samples": wandb.Image(f"{opt.outf}/fake_samples_step_{global_step:06d}.png")
+                           }, step=global_step)
 
         # do checkpointing
         torch.save(netG.state_dict(), '%s/netG_epoch_%d.pth' % (opt.outf, epoch))
