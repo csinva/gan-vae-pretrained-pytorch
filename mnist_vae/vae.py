@@ -115,9 +115,9 @@ def test(epoch):
 if __name__ == "__main__":
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
-    notes = "On watch method, log all and log graph. Attempt to create artifacts of models"
+    notes = "Change to batches of 8"
 
-    run = wandb.init(project='mnist-generation', entity='bk-synth', config=args, name='Log Artifacts',
+    run = wandb.init(project='mnist-generation', entity='bk-synth', config=args, name='Batch Size 8',
                      notes=notes, tags=["VAE", "MNIST"])
 
     torch.manual_seed(args.seed)
@@ -154,6 +154,6 @@ if __name__ == "__main__":
         if epoch % 5 == 0:
             save_path = f'model/vae_epoch_{epoch}.pth'
             torch.save(model.state_dict(), save_path)
-            model_artifact.add(save_path)
+            model_artifact.add_file(save_path)
     
     run.log_artifact(model_artifact)
