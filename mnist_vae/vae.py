@@ -105,6 +105,7 @@ def test(epoch):
                     save_image(comparison.cpu(),
                          oj(out_dir, 'reconstruction_' + str(epoch) + '.png'), nrow=n)
                     torch.save(model.state_dict(), oj(out_dir, f'vae_epoch_{epoch}.pth'))
+                    wandb.log({"Reconstruction": wandb.Image(f"{out_dir}/reconstruction_{str(epoch)}.png")})
 
 
     test_loss /= len(test_loader.dataset)
@@ -114,8 +115,10 @@ def test(epoch):
 if __name__ == "__main__":
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
+    notes = "On watch method, log all and log graph. Attempt to create artifacts of models"
 
-    wandb.init(project='mnist-generation', entity='bk-synth', config=args)
+    run = wandb.init(project='mnist-generation', entity='bk-synth', config=args, name='Log Artifacts',
+                     notes=notes, tags=["VAE", "MNIST"])
 
     torch.manual_seed(args.seed)
 
@@ -133,8 +136,9 @@ if __name__ == "__main__":
     os.makedirs(out_dir, exist_ok=True)
     model = VAE().to(device)
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
-    wandb.watch(model)
+    wandb.watch(model, log='all', log_graph=True)
 
+    model_artifact = wandb.Artifact('vae-mnist', type='model')
     
     # actually do training
     for epoch in range(1, args.epochs + 1):
@@ -145,3 +149,11 @@ if __name__ == "__main__":
             sample = model.decode(sample).cpu()
             save_image(sample.view(64, 1, 28, 28),
                        oj(out_dir, 'sample_' + str(epoch) + '.png'))
+            wandb.log({"Sample": wandb.Image(f"{out_dir}/sample_{str(epoch)}.png")})
+
+        if epoch % 5 == 0:
+            save_path = f'model/vae_epoch_{epoch}.pth'
+            torch.save(model.state_dict(), save_path)
+            model_artifact.add(save_path)
+    
+    run.log_artifact(model_artifact)
